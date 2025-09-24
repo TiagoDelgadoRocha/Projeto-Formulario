@@ -54,3 +54,9 @@ aside::before{
     background-repeat: no-repeat;
     z-index: 1;
 }
+
+#subtitle{
+    display: flex;
+    align-items: center;
+}
+

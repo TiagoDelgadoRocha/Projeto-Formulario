@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,11 +23,78 @@
         </aside>
         <main>
             <div class="main-container">
-                <header><p>Crie Seu Convite</p></header>
+                <header>
+                    <p>Crie Seu Convite</p>
+                </header>
 
                 <body>
-                    <img src="assets/icons/calendar.svg" alt="">
-                    <p class="heading">Sobre o Evento</p>
+                    <div id="subtitle">
+                        <img src="assets/icons/calendar.svg" alt="">
+                        <p class="heading">Sobre o Evento</p>
+                    </div>
+
+                    <form>
+                        <fieldset class="child-info">
+                            <legend>Titulo</legend>
+                            <input id="title" type="text" placeholder="Nome do Evento">
+                        </fieldset>
+
+                        <fieldset class="data-info">
+                            <legend>Inicio</legend>
+                            <input type="date" name="date" id="data">
+                        </fieldset>
+
+                        <fieldset class="data-info">
+                            <legend>Fim</legend>
+                            <input type="date" id="data">
+                        </fieldset>
+
+                        <fieldset class="tipo-info">
+                            <legend>Tipo</legend>
+
+                            <label for="presencial">
+                                <input type="radio" id="presencial" name="tipo" value="presencial">
+                                Presencial
+                            </label>
+
+                            <label for="online">
+                                <input type="radio" id="online" name="tipo" value="online">
+                                Online
+                            </label>
+                        </fieldset>
+
+                        <fieldset class="local-info">
+                            <legend>Local</legend>
+                            <input type="text" id="local" name="local" placeholder="Link ou endereço">
+
+                        </fieldset>
+                        <fieldset class="descricao-info">
+                            <legend>Descrição</legend>
+                            <textarea name="descricao" id="descricao" placeholder="Escreva sobre os detalhes do evento"></textarea>
+                        </fieldset>
+                    </form>
+
+                    <div id="subtitle">
+                        <img src="assets/icons/paintbrush-vertical.svg" alt="icon do pincel">
+                        <p class="heading">Personalização</p>
+                    </div>
+                    <form>
+                        <fieldset class="cor-info">
+                            <legend>Cor Principal</legend>
+                            <input type="radio" name="roxo" id="roxo">
+                            <input type="radio" name="lilas" id="lilas">
+                            <input type="radio" name="rosa" id="rosa">
+                            <input type="radio" name="azul" id="azul">
+                            <input type="radio" name="magenta" id="magenta">
+                            <input type="radio" name="verm" id="verm">
+                            <input type="radio" name="laranja" id="laranja">
+                            <input type="radio" name="amarelo" id="amarelo">
+                            <input type="radio" name="verde-agua" id="verde-agua">
+                            <input type="radio" name="green" id="green">
+                            <input type="radio" name="light-blue" id="light-blue">
+
+                        </fieldset>
+                    </form>
                 </body>
             </div>
 
@@ -34,4 +102,5 @@
 
     </div>
 </body>
+
 </html>

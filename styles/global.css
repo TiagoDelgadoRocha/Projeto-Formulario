@@ -55,6 +55,9 @@
 }
 body{
     overflow: hidden;
+    font: var(--text-md);
+    color: var(--text-body);
+    color: var(--text-body);
 }
 
 
