@@ -1,0 +1,56 @@
+#app{
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+main{
+    overflow: auto;
+    padding: 5rem;
+    background-color: var(--shape-body);
+
+    & .main-container{
+        max-width: 35rem;
+
+    }
+}
+
+aside{
+    background-color: var(--shape-background);
+    position: relative;
+    width: 400px;
+    height: 728px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 2rem 1rem 0;
+    box-sizing: border-box;
+
+    & .aside-container{
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+aside::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/outros/Background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}

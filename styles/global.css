@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root{
     --font-family: 'Open Sans', sans-serif;
     --text-md: 400 1rem/1.5 var(--font-family);   /* Body Md: 16px */
@@ -47,9 +53,21 @@
     --text-body: #C8CDD0;
     --text-heading: #F9F9F9;
 }
+body{
+    overflow: hidden;
+}
 
 
 header{
     font:var(--heading-md);
+    color: var(--text-heading);
+}
+
+.heading{
+    font: var(--heading-sm);
+    color: var(--text-heading);
+}
+.body{
+    font: var(--text-body) ;
     color: var(--text-heading);
 }
