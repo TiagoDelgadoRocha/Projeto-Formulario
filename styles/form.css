@@ -6,3 +6,6 @@ fieldset {
     display: flex;
     align-items: center;
 }
+form{
+    padding-bottom: 3rem;
+}
