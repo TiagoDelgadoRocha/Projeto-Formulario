@@ -6,6 +6,9 @@ fieldset {
     display: flex;
     align-items: center;
 }
-form{
+.form{
     padding-bottom: 3rem;
+}
+.sublinhado {
+    text-decoration: underline;
 }

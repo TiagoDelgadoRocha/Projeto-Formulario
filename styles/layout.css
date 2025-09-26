@@ -60,3 +60,8 @@ aside::before{
     align-items: center;
 }
 
+form {
+    margin-bottom: 3rem;
+    display: block;
+}
+
