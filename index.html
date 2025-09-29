@@ -33,7 +33,7 @@
                         <p class="heading">Sobre o Evento</p>
                     </div>
 
-                    <form class="form">
+                    <form class="evento">
                         <fieldset class="child-info">
                             <legend>Titulo</legend>
                             <input id="title" name="title" type="text" placeholder="Nome do Evento">
@@ -79,22 +79,26 @@
                         <img src="assets/icons/paintbrush-vertical.svg" alt="icon do pincel">
                         <p class="heading">Personalização</p>
                     </div>
-                    <form class="form">
-                        <fieldset class="cor-info">
-                            <legend>Cor Principal</legend>
-                            <input type="radio" name="cor" id="roxo" value="roxo">
-                            <input type="radio" name="cor" id="lilas" value="lilas">
-                            <input type="radio" name="cor" id="rosa" value="rosa">
-                            <input type="radio" name="cor" id="azul" value="azul">
-                            <input type="radio" name="cor" id="magenta" value="magenta">
-                            <input type="radio" name="cor" id="verm" value="vermelho">
-                            <input type="radio" name="cor" id="laranja" value="laranja">
-                            <input type="radio" name="cor" id="amarelo" value="amarelo">
-                            <input type="radio" name="cor" id="verde-agua" value="verde-agua">
-                            <input type="radio" name="cor" id="green" value="verde">
-                            <input type="radio" name="cor" id="light-blue" value="azul-claro">
+                    <form class="personalizacao">
+                        <div class="cores">
 
-                        </fieldset>
+
+                            <fieldset class="cor-info">
+                                <legend>Cor Principal</legend>
+                                <input type="radio" name="cor" id="roxo" value="roxo">
+                                <input type="radio" name="cor" id="lilas" value="lilas">
+                                <input type="radio" name="cor" id="rosa" value="rosa">
+                                <input type="radio" name="cor" id="azul" value="azul">
+                                <input type="radio" name="cor" id="magenta" value="magenta">
+                                <input type="radio" name="cor" id="verm" value="vermelho">
+                                <input type="radio" name="cor" id="laranja" value="laranja">
+                                <input type="radio" name="cor" id="amarelo" value="amarelo">
+                                <input type="radio" name="cor" id="verde-agua" value="verde-agua">
+                                <input type="radio" name="cor" id="green" value="verde">
+                                <input type="radio" name="cor" id="light-blue" value="azul-claro">
+    
+                            </fieldset>
+                        </div>
 
 
                         <legend>Tema do Evento</legend>
@@ -175,19 +179,19 @@
                             <label for="estilo">Escuro</label>
 
                             <legend>Foto da capa</legend>
-                            <input type="file" name="file" id="file" value="file" >
+                            <input type="file" name="file" id="file" value="file">
                     </form class="form">
 
-                    <div id="subtitle" style="padding-top: 3rem;"> 
+                    <div id="subtitle" style="padding-top: 3rem;">
                         <img src="assets/icons/contact.svg" alt="icon do contato">
                         <p class="heading">Dados para contato</p>
                     </div>
-                    <form >
+                    <form class="contato">
                         <legend>Nome</legend>
                         <input type="text" name="nome" id="nome" placeholder="Nome completo">
 
                         <legend>E-mail</legend>
-                        <input type="email" name="email" id="email" placeholder="exemplo@email.com" >
+                        <input type="email" name="email" id="email" placeholder="exemplo@email.com" required>
 
                         <legend>Telefone</legend>
                         <input type="number" name="telefone" id="telefone" placeholder="(99) 99999-999">
@@ -195,9 +199,10 @@
 
                     <form class="form">
                         <input type="checkbox" name="termos" id="termos" value="termos">
-                        <label for="termos">Li e concordo com os <span class="sublinhado">Termos e Condições</span> e com a
-                             <span class="sublinhado">Política de Privacidade</span></label>
-                        
+                        <label for="termos">Li e concordo com os <span class="sublinhado">Termos e Condições</span> e
+                            com a
+                            <span class="sublinhado">Política de Privacidade</span></label>
+
                         <input type="checkbox" name="atualizacoes" id="atualizacoes" value="atualizacoes">
                         <label for="atualizacoes">Aceito receber atualizações e promoções por e-mail</label>
 
