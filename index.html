@@ -10,6 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('file');
+            const fileText = document.querySelector('.file-text');
+            
+            if (fileInput && fileText) {
+                fileInput.addEventListener('change', function() {
+                    if (this.files && this.files[0]) {
+                        fileText.textContent = this.files[0].name;
+                    } else {
+                        fileText.textContent = 'Nenhum arquivo selecionado';
+                    }
+                });
+            }
+        });
+    </script>
 
 <body>
     <div id="app">
@@ -173,41 +190,70 @@
                                 <img src="assets/temas/Image (11).svg" alt="Outro">
                                 <span class="tema-caption">Outro</span>
                             </label>
+                        </div>
 
+                        <fieldset class="estilo-section">
                             <legend>Estilo</legend>
-                            <input type="checkbox" name="Tema-escuro" id="estilo" value="estilo">
-                            <label for="estilo">Escuro</label>
+                            <div class="estilo-checkbox">
+                                <input type="checkbox" name="tema-escuro" id="estilo" value="escuro">
+                                <label for="estilo">Escuro</label>
+                            </div>
+                        </fieldset>
 
+                        <fieldset class="foto-section">
                             <legend>Foto da capa</legend>
-                            <input type="file" name="file" id="file" value="file">
-                    </form class="form">
+                            <div class="file-input-wrapper">
+                                <input type="file" name="file" id="file" accept="image/*">
+                                <label for="file" class="file-input-label">
+                                    <span class="file-button">Selecionar</span>
+                                    <span class="file-text">Nenhum arquivo selecionado</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </form>
 
                     <div id="subtitle" style="padding-top: 3rem;">
                         <img src="assets/icons/contact.svg" alt="icon do contato">
                         <p class="heading">Dados para contato</p>
                     </div>
-                    <form class="contato">
-                        <legend>Nome</legend>
-                        <input type="text" name="nome" id="nome" placeholder="Nome completo">
+                    
+                    <form class="dados-contato">
+                        <fieldset class="contato-campos">
+                            <legend>Nome</legend>
+                            <input type="text" name="nome" id="nome" placeholder="Nome completo">
+                            <div class="campo-obrigatorio">Campo obrigatório</div>
+                        </fieldset>
 
-                        <legend>E-mail</legend>
-                        <input type="email" name="email" id="email" placeholder="exemplo@email.com" required>
+                        <div class="contato-grid">
+                            <fieldset>
+                                <legend>E-mail</legend>
+                                <input type="email" name="email" id="email" placeholder="exemplo@email.com" required>
+                            </fieldset>
 
-                        <legend>Telefone</legend>
-                        <input type="number" name="telefone" id="telefone" placeholder="(99) 99999-999">
-                    </form>
+                            <fieldset>
+                                <legend>Telefone</legend>
+                                <input type="tel" name="telefone" id="telefone" placeholder="(99) 99999-9999">
+                            </fieldset>
+                        </div>
 
-                    <form class="form">
-                        <input type="checkbox" name="termos" id="termos" value="termos">
-                        <label for="termos">Li e concordo com os <span class="sublinhado">Termos e Condições</span> e
-                            com a
-                            <span class="sublinhado">Política de Privacidade</span></label>
+                        <fieldset class="termos-info">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="termos" id="termos" value="termos" required>
+                                <label for="termos">Li e concordo com os <span class="sublinhado">Termos e Condições</span> e com a <span class="sublinhado">Política de Privacidade</span></label>
+                            </div>
 
-                        <input type="checkbox" name="atualizacoes" id="atualizacoes" value="atualizacoes">
-                        <label for="atualizacoes">Aceito receber atualizações e promoções por e-mail</label>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="atualizacoes" id="atualizacoes" value="atualizacoes">
+                                <label for="atualizacoes">Aceito receber atualizações e promoções por e-mail</label>
+                            </div>
 
-                        <input type="checkbox" name="sms" id="sms" value="sms">
-                        <label for="sms">Aceito receber atualizações e promoções por SMS</label>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="sms" id="sms" value="sms">
+                                <label for="sms">Aceito receber atualizações e promoções por SMS</label>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="gerar-convite">Gerar convite</button>
                     </form>
                 </body>
             </div>

@@ -29,5 +29,371 @@ input, textarea,select{
     width: 100%;
     border-radius: 0.5rem;  
     border: 1px solid var(--input-base);
+    background-color: var(--input-base);
+    color: var(--text-body);
+    padding: 0.75rem 1rem;
+    font: var(--text-md);
+}
 
+input::placeholder, textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+/* Primeira seção de forms - Sobre o evento */
+.child-info, .data-info, .tipo-info, .local-info, .descricao-info {
+    margin-bottom: 1.5rem;
+}
+
+.data-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.data-info fieldset {
+    flex: 1;
+}
+
+.tipo-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.tipo-info label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--shape-button);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tipo-info input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.tipo-info input[type="radio"]:checked + label,
+.tipo-info label:has(input[type="radio"]:checked) {
+    background-color: var(--brand-mid);
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Seção de personalização - Cor Principal */
+.cor-info {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.cor-info input[type="radio"] {
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    margin: 0;
+}
+
+.cor-info input[type="radio"]:checked {
+    border-color: var(--text-heading);
+    transform: scale(1.1);
+}
+
+/* Cores específicas para cada input */
+#roxo { background-color: var(--accent-purple); }
+#lilas { background-color: #B259FF; }
+#rosa { background-color: var(--accent-pink); }
+#azul { background-color: var(--brand-mid); }
+#magenta { background-color: var(--accent-fuschia); }
+#verm { background-color: #FF5959; }
+#laranja { background-color: var(--accent-orange); }
+#amarelo { background-color: var(--accent-yellow); }
+#verde-agua { background-color: var(--accent-cyan); }
+#green { background-color: var(--accent-green); }
+#light-blue { background-color: var(--accent-cyan); }
+
+/* Tema do evento */
+.tema-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tema-grid input[type="radio"] {
+    display: none;
+}
+
+.tema-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--shape-button);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.tema-tile img {
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tema-caption {
+    font: var(--text-sm);
+    color: var(--text-body);
+    text-align: center;
+}
+
+.tema-grid input[type="radio"]:checked + .tema-tile {
+    border-color: var(--brand-light);
+}
+
+/* Seção de dados para contato */
+.dados-contato {
+    margin-bottom: 2rem;
+}
+
+.contato-campos {
+    margin-bottom: 1.5rem;
+}
+
+.contato-campos input {
+    margin-bottom: 0.25rem;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Checkboxes de termos */
+.termos-info {
+    margin-bottom: 1.5rem;
+}
+
+.termos-info input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    margin-right: 0.5rem;
+    accent-color: var(--brand-mid);
+    flex-shrink: 0;
+}
+
+.termos-info label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font: var(--text-sm);
+    color: var(--text-body);
+    line-height: 1.4;
+}
+
+/* Botão de gerar convite */
+.gerar-convite {
+    background-color: var(--brand-mid);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.75rem;
+    font: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.gerar-convite:hover {
+    background-color: var(--brand-light);
+    transform: translateY(-2px);
+}
+
+.gerar-convite:active {
+    transform: translateY(0);
+}
+
+/* Validação - campo obrigatório */
+.campo-obrigatorio {
+    color: var(--feedback-danger);
+    font: var(--text-xs);
+    margin-top: 0.25rem;
+}
+
+/* Estados de erro */
+input:invalid, textarea:invalid {
+    border-color: var(--feedback-danger);
+}
+
+/* Seção de Estilo */
+.estilo-section {
+    margin-bottom: 1.5rem;
+}
+
+.estilo-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.estilo-section input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    background-color: var(--shape-button);
+    border: 2px solid var(--input-stroke);
+    border-radius: 6px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.estilo-section input[type="checkbox"]:checked {
+    background-color: var(--brand-mid);
+    border-color: var(--brand-mid);
+}
+
+.estilo-section input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.estilo-section label {
+    font: var(--text-md);
+    color: var(--text-body);
+    cursor: pointer;
+}
+
+/* Seção de Foto da capa */
+.foto-section {
+    margin-bottom: 2rem;
+}
+
+.file-input-wrapper {
+    position: relative;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--input-base);
+    border: 2px dashed var(--input-stroke);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.file-input-label:hover {
+    border-color: var(--brand-mid);
+}
+
+.file-button {
+    background-color: var(--brand-mid);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font: var(--text-sm);
+    font-weight: 600;
+}
+
+.file-text {
+    font: var(--text-sm);
+    color: var(--text-body);
+}
+
+/* Seção de termos */
+.termos-info {
+    margin-bottom: 2rem;
+}
+
+.checkbox-item {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.checkbox-item:last-child {
+    margin-bottom: 0;
+}
+
+.termos-info input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-right: 0.75rem;
+    background-color: var(--shape-button);
+    border: 2px solid var(--input-stroke);
+    border-radius: 6px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.termos-info input[type="checkbox"]:checked {
+    background-color: var(--brand-mid);
+    border-color: var(--brand-mid);
+}
+
+.termos-info input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.termos-info label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    font: var(--text-sm);
+    color: var(--text-body);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.campo-obrigatorio {
+    color: var(--feedback-danger);
+    font: var(--text-xs);
+    margin-top: 0.25rem;
 }
