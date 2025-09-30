@@ -14,6 +14,7 @@ fieldset {
 }
 .sublinhado {
     text-decoration: underline;
+    color: var(--brand-light);
 }
 .cores{
     justify-content: space-between;
@@ -257,18 +258,35 @@ textarea {
 }
 
 /* Botão de gerar convite */
+.botao-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha à direita */
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+}
 .gerar-convite {
+   
     background-color: var(--brand-mid);
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem 0.5rem 2rem;
     border: none;
-    border-radius: 0.75rem;
+    border-radius: 0.9rem;
     font: var(--text-md);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
     width: 100%;
     margin-top: 1rem;
+    position: relative;
+    /* Ícone do ticket */
+    background-image: url('../assets/icons/ticket.svg');
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    background-size: 20px 20px;
+
+    max-width: 11.25rem;
+    max-height: 3rem;
+    
 }
 
 .gerar-convite:hover {
@@ -305,32 +323,36 @@ input:invalid, textarea:invalid {
 
 .estilo-section input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 48px;
+    height: 24px;
     margin: 0;
-    background-color: var(--shape-button);
-    border: 2px solid var(--input-stroke);
-    border-radius: 6px;
+    background-color: var(--input-stroke);
+    border: none;
+    border-radius: 12px;
     flex-shrink: 0;
     cursor: pointer;
     position: relative;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
 }
 
 .estilo-section input[type="checkbox"]:checked {
     background-color: var(--brand-mid);
-    border-color: var(--brand-mid);
+}
+
+.estilo-section input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .estilo-section input[type="checkbox"]:checked::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
+    left: 26px;
 }
 
 .estilo-section label {
@@ -348,7 +370,8 @@ input:invalid, textarea:invalid {
 
 .checkbox-item {
     margin-bottom: 1rem;
-    position: relative;
+    display: flex;
+    align-items: flex-start;
 }
 
 .checkbox-item:last-child {
@@ -387,9 +410,6 @@ input:invalid, textarea:invalid {
 }
 
 .termos-info label {
-    display: flex;
-    align-items: flex-start;
-    gap: 0;
     font: var(--text-sm);
     color: var(--text-body);
     line-height: 1.5;
@@ -441,4 +461,3 @@ input[type="date"]{
     max-width: 35rem;
     box-sizing: border-box;
 }
-
