@@ -10,23 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fileInput = document.getElementById('file');
-            const fileText = document.querySelector('.file-text');
-            
-            if (fileInput && fileText) {
-                fileInput.addEventListener('change', function() {
-                    if (this.files && this.files[0]) {
-                        fileText.textContent = this.files[0].name;
-                    } else {
-                        fileText.textContent = 'Nenhum arquivo selecionado';
-                    }
-                });
-            }
-        });
-    </script>
 
 <body>
     <div id="app">
@@ -49,52 +32,52 @@
                         <img src="assets/icons/calendar.svg" alt="">
                         <p class="heading">Sobre o Evento</p>
                     </div>
-                <div id="sobre">
-                    <form class="evento">
-                        <fieldset class="child-info">
-                            <legend>Titulo</legend>
-                            <input id="title" name="title" type="text" placeholder="Nome do Evento">
-                        </fieldset>
+                    <div id="sobre">
+                        <form class="evento">
+                            <fieldset class="child-info">
+                                <legend>Titulo</legend>
+                                <input id="title" name="title" type="text" placeholder="Nome do Evento">
+                            </fieldset>
 
-                        <div id="teste">
-                        <fieldset class="data-info">
-                            <legend>Inicio</legend>
-                            <input type="date" name="data-inicio" id="data-inicio">
-                        </fieldset>
+                            <div id="teste">
+                                <fieldset class="data-info">
+                                    <legend>Inicio</legend>
+                                    <input type="date" name="data-inicio" id="data-inicio">
+                                </fieldset>
 
-                        <fieldset class="data-info">
-                            <legend>Fim</legend>
-                            <input type="date" name="data-fim" id="data-fim">
-                        </fieldset>
-                        </div>
+                                <fieldset class="data-info">
+                                    <legend>Fim</legend>
+                                    <input type="date" name="data-fim" id="data-fim">
+                                </fieldset>
+                            </div>
 
-                        <div id="teste">
-                        <fieldset class="tipo-info">
-                            <legend>Tipo</legend>
+                            <div id="teste">
+                                <fieldset class="tipo-info">
+                                    <legend>Tipo</legend>
 
-                            <label for="presencial">
-                                <input type="radio" id="presencial" name="tipo" value="presencial">
-                                Presencial
-                            </label>
+                                    <label for="presencial">
+                                        <input type="radio" id="presencial" name="tipo" value="presencial">
+                                        Presencial
+                                    </label>
 
-                            <label for="online">
-                                <input type="radio" id="online" name="tipo" value="online">
-                                Online
-                            </label>
-                        </fieldset>
+                                    <label for="online">
+                                        <input type="radio" id="online" name="tipo" value="online">
+                                        Online
+                                    </label>
+                                </fieldset>
 
-                        <fieldset class="local-info">
-                            <legend>Local</legend>
-                            <input type="text" id="local" name="local" placeholder="Link ou endereço">
+                                <fieldset class="local-info">
+                                    <legend>Local</legend>
+                                    <input type="text" id="local" name="local" placeholder="Link ou endereço">
 
-                        </fieldset>
-                        </div>
-                        <fieldset class="descricao-info">
-                            <legend>Descrição</legend>
-                            <textarea name="descricao" id="descricao"
-                                placeholder="Escreva sobre os detalhes do evento"></textarea>
-                        </fieldset>
-                    </form>
+                                </fieldset>
+                            </div>
+                            <fieldset class="descricao-info">
+                                <legend>Descrição</legend>
+                                <textarea name="descricao" id="descricao"
+                                    placeholder="Escreva sobre os detalhes do evento"></textarea>
+                            </fieldset>
+                        </form>
                     </div>
                     <div id="subtitle">
                         <img src="assets/icons/paintbrush-vertical.svg" alt="icon do pincel">
@@ -117,7 +100,7 @@
                                 <input type="radio" name="cor" id="verde-agua" value="verde-agua">
                                 <input type="radio" name="cor" id="green" value="verde">
                                 <input type="radio" name="cor" id="light-blue" value="azul-claro">
-    
+
                             </fieldset>
                         </div>
 
@@ -195,76 +178,78 @@
                                 <span class="tema-caption">Outro</span>
                             </label>
                         </div>
-
-                        <fieldset class="estilo-section">
-                            <legend>Estilo</legend>
-                            <div class="estilo-checkbox">
-                                <input type="checkbox" name="tema-escuro" id="estilo" value="escuro">
-                                <label for="estilo">Escuro</label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="foto-section">
-                            <legend>Foto da capa</legend>
-                            <div class="file-input-wrapper">
-                                <input type="file" name="file" id="file" accept="image/*">
-                                <label for="file" class="file-input-label">
-                                    <span class="file-button">Selecionar</span>
-                                    <span class="file-text">Nenhum arquivo selecionado</span>
-                                </label>
-                            </div>
-                        </fieldset>
-                    </form>
-
-                    <div id="subtitle" style="padding-top: 3rem;">
-                        <img src="assets/icons/contact.svg" alt="icon do contato">
-                        <p class="heading">Dados para contato</p>
-                    </div>
-                    
-                    <form class="dados-contato">
-                        <fieldset class="contato-campos">
-                            <legend>Nome</legend>
-                            <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
-                            <div class="campo-obrigatorio">Campo obrigatório</div>
-                        </fieldset>
-
-                        <div class="contato-grid">
-                            <fieldset>
-                                <legend>E-mail</legend>
-                                <input type="email" name="email" id="email" placeholder="exemplo@email.com" >
+                        <div id="estilo-foto">
+                            <fieldset class="estilo-section">
+                                <legend>Estilo</legend>
+                                <div class="estilo-checkbox">
+                                    <input type="checkbox" name="tema-escuro" id="estilo" value="escuro">
+                                    <label for="estilo">Escuro</label>
+                                </div>
                             </fieldset>
-
-                            <fieldset>
-                                <legend>Telefone</legend>
-                                <input type="tel" name="telefone" id="telefone" placeholder="(99) 99999-9999">
-                            </fieldset>
-                        </div>
-
-                        <fieldset class="termos-info">
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="termos" id="termos" value="termos" required>
-                                <label for="termos">Li e concordo com os <span class="sublinhado">Termos e Condições</span> e com a <span class="sublinhado">Política de Privacidade</span></label>
-                            </div>
-
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="atualizacoes" id="atualizacoes" value="atualizacoes">
-                                <label for="atualizacoes">Aceito receber atualizações e promoções por e-mail</label>
-                            </div>
-
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="sms" id="sms" value="sms">
-                                <label for="sms">Aceito receber atualizações e promoções por SMS</label>
-                            </div>
-                        </fieldset>
-
-                        <button type="submit" class="gerar-convite">Gerar convite</button>
+                            <div class="file">
+                                <!-- ...existing code... -->
+                                <fieldset class="foto-section">
+                                    <legend>Foto da capa</legend>
+                                    <input type="file" name="file" id="file" accept="image/*">
+                                    <div class="file-display">
+                                        <div class="file-button">Selecionar</div>
+                                        <div class="file-text">Nenhum arquivo selecionado</div>
+                                    </div>
+                                </fieldset>
+                                <!-- ...existing code... -->
                     </form>
-                </body>
+            </div>
+    </div>
+    <div id="subtitle">
+        <img src="assets/icons/contact.svg" alt="icon do contato">
+        <p class="heading">Dados para contato</p>
+    </div>
+
+    <form class="dados-contato">
+        <fieldset class="contato-campos">
+            <legend>Nome</legend>
+            <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+            <div class="campo-obrigatorio">Campo obrigatório</div>
+        </fieldset>
+
+        <div class="contato-grid">
+            <fieldset>
+                <legend>E-mail</legend>
+                <input type="email" name="email" id="email" placeholder="exemplo@email.com">
+            </fieldset>
+
+            <fieldset>
+                <legend>Telefone</legend>
+                <input type="tel" name="telefone" id="telefone" placeholder="(99) 99999-9999">
+            </fieldset>
+        </div>
+
+        <fieldset class="termos-info">
+            <div class="checkbox-item">
+                <input type="checkbox" name="termos" id="termos" value="termos" required>
+                <label for="termos">Li e concordo com os <span class="sublinhado">Termos e Condições</span> e
+                    com a <span class="sublinhado">Política de Privacidade</span></label>
             </div>
 
-        </main>
+            <div class="checkbox-item">
+                <input type="checkbox" name="atualizacoes" id="atualizacoes" value="atualizacoes">
+                <label for="atualizacoes">Aceito receber atualizações e promoções por e-mail</label>
+            </div>
 
-    </div>
+            <div class="checkbox-item">
+                <input type="checkbox" name="sms" id="sms" value="sms">
+                <label for="sms">Aceito receber atualizações e promoções por SMS</label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="gerar-convite">Gerar convite</button>
+    </form>
+</body>
+</div>
+
+</main>
+
+</div>
 </body>
 
 </html>
