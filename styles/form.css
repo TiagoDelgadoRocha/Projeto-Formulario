@@ -55,7 +55,7 @@ input::placeholder, textarea::placeholder {
 
 .tipo-info {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .tipo-info label {
@@ -63,25 +63,74 @@ input::placeholder, textarea::placeholder {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background-color: var(--shape-button);
+    background-color: #2a2a2a;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
+    border: 1px solid #444;
+    font: var(--text-sm);
+    color: #ccc;
+}
+
+/* Ícones como pseudo-elementos */
+.tipo-info label::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+    flex-shrink: 0;
+    filter: brightness(0.8);
+}
+
+/* Ícone para Presencial */
+.tipo-info label[for="presencial"]::before {
+    background-image: url('../assets/icons/building-2.svg');
+}
+
+/* Ícone para Online */
+.tipo-info label[for="online"]::before {
+    background-image: url('../assets/icons/video.svg');
 }
 
 .tipo-info input[type="radio"] {
-    width: auto;
-    margin: 0;
+    display: none;
 }
 
 .tipo-info input[type="radio"]:checked + label,
 .tipo-info label:has(input[type="radio"]:checked) {
-    background-color: var(--brand-mid);
+    background-color: #6B46C1;
+    border-color: #8B5CF6;
+    color: white;
+    box-shadow: 0 0 0 1px #8B5CF6;
+}
+
+/* Ícones ficam mais claros quando selecionados */
+.tipo-info input[type="radio"]:checked + label::before,
+.tipo-info label:has(input[type="radio"]:checked)::before {
+    filter: brightness(1.2);
+}
+
+/* Efeito hover sutil */
+.tipo-info label:hover {
+    border-color: #666;
+    background-color: #333;
+}
+
+/* Hover no estado selecionado */
+.tipo-info input[type="radio"]:checked + label:hover,
+.tipo-info label:has(input[type="radio"]:checked):hover {
+    background-color: #7C3AED;
+    border-color: #A855F7;
 }
 
 textarea {
     min-height: 80px;
     resize: vertical;
+    width: 35rem;
+    height: 10.5rem ;
+    
 }
 
 /* Seção de personalização - Cor Principal */
@@ -397,3 +446,30 @@ input:invalid, textarea:invalid {
     font: var(--text-xs);
     margin-top: 0.25rem;
 }
+
+#teste{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 35rem;
+    box-sizing: border-box;
+}
+
+input, textarea, select {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--input-stroke);
+    padding: 0.75rem;
+    background-color: var(--shape-body);
+    color: var(--text-body);
+    font-size: 0.9rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.2);
+}
+
+

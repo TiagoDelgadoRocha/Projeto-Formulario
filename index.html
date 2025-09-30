@@ -49,13 +49,14 @@
                         <img src="assets/icons/calendar.svg" alt="">
                         <p class="heading">Sobre o Evento</p>
                     </div>
-
+                <div id="sobre">
                     <form class="evento">
                         <fieldset class="child-info">
                             <legend>Titulo</legend>
                             <input id="title" name="title" type="text" placeholder="Nome do Evento">
                         </fieldset>
 
+                        <div id="teste">
                         <fieldset class="data-info">
                             <legend>Inicio</legend>
                             <input type="date" name="data-inicio" id="data-inicio">
@@ -65,7 +66,9 @@
                             <legend>Fim</legend>
                             <input type="date" name="data-fim" id="data-fim">
                         </fieldset>
+                        </div>
 
+                        <div id="teste">
                         <fieldset class="tipo-info">
                             <legend>Tipo</legend>
 
@@ -85,13 +88,14 @@
                             <input type="text" id="local" name="local" placeholder="Link ou endereço">
 
                         </fieldset>
+                        </div>
                         <fieldset class="descricao-info">
                             <legend>Descrição</legend>
                             <textarea name="descricao" id="descricao"
                                 placeholder="Escreva sobre os detalhes do evento"></textarea>
                         </fieldset>
                     </form>
-
+                    </div>
                     <div id="subtitle">
                         <img src="assets/icons/paintbrush-vertical.svg" alt="icon do pincel">
                         <p class="heading">Personalização</p>
@@ -220,14 +224,14 @@
                     <form class="dados-contato">
                         <fieldset class="contato-campos">
                             <legend>Nome</legend>
-                            <input type="text" name="nome" id="nome" placeholder="Nome completo">
+                            <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
                             <div class="campo-obrigatorio">Campo obrigatório</div>
                         </fieldset>
 
                         <div class="contato-grid">
                             <fieldset>
                                 <legend>E-mail</legend>
-                                <input type="email" name="email" id="email" placeholder="exemplo@email.com" required>
+                                <input type="email" name="email" id="email" placeholder="exemplo@email.com" >
                             </fieldset>
 
                             <fieldset>
